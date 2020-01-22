@@ -1,0 +1,36 @@
+﻿* { padding: 0; border: 0; margin: 0;  }
+html, body { font-family: Arial; font-size: 20px; }
+.wrapper { overflow: hidden; display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+/**** GAME ******/
+.game-container { position: relative; width: 50%; height: 100vh; overflow: hidden; border-right: 5px solid firebrick; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.panel-info-container { width: 50%; text-align: left; }
+.gameFinished { background: black; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; display: none; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; color: white; text-transform: uppercase; font-size: 30px; }
+
+/**** GRID ******/
+#board { width: 25rem; height: 25rem; position: relative; }
+#grid { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+#grid .cell { position: absolute; width: 5rem; height: 5rem; cursor: pointer; border: 1px solid lightgrey; }
+
+/**** BEE GAME ******/
+#actors { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+.actor { position: absolute; width: 5rem; height: 5rem; border: 5px solid transparent; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: left; font-size: 11px; cursor: pointer; -webkit-transition: all .25s ease-in-out; -o-transition: all .25s ease-in-out; transition: all .25s ease-in-out; }
+.actor { background-image: url(../images/bee.png); background-size: 60%; background-repeat: no-repeat; background-position: center center; }
+.actor.bee:hover { border: 5px solid black; }
+.actor.wasp, .actor.queen-wasp { background-image: url(../images/wasp.png); }
+.actor.queen-bee, .actor.queen-wasp { background-size: 80%; color: orange; font-weight: bold; }
+.actor.selected { border-color: #000; background-color: #FFC107; }
+
+/*****PANEL INFO CONTAINER *******/
+.panel-info-container { padding: 30px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.panel-info-container h3 { text-align: center; margin-bottom: 50px; text-transform: uppercase; }
+.logs { max-height: 720px; overflow-y: scroll; }
+
+.logs li { font-size: 13px; margin-bottom: 1px; border-bottom: 1px solid #ccc; }
+.logs li .highlight { color: firebrick; }
+
+@media only screen and (max-width: 600px) {
+    html, body { font-size: 12px; }
+    .wrapper {display: block;}
+    .panel-info-container, .game-container {width: 100%;  }
+}
